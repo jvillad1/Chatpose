@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Chatpose</string>
+    <string name="chats_title">Chat with your friends</string>
 </resources>
