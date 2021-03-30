@@ -10,6 +10,7 @@ Design was inspired by [Tannaz Sadeghi](https://dribbble.com/tannazsadeghi)'s sh
 [Dribbble](https://dribbble.com/shots/11470136-A-Messaging-App-Concept).
 
 ## To Do
+ - [ ] Edge to Edge Support
  - [ ] Chats Screen
  - [ ] Search Contants Screen
  - [ ] Login/Register Screen
