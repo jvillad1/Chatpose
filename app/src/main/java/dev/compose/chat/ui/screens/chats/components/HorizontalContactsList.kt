@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
@@ -33,21 +34,40 @@ fun HorizontalContactsList(
             CircularBox(
                 modifier = Modifier
                     .padding(end = 16.dp)
-                    .size(40.dp),
+                    .size(64.dp),
                 backgroundColor = Color.White.copy(alpha = 0.3f)
             ) {
-                Icon(imageVector = Icons.Default.Search, contentDescription = "")
+                Icon(
+                    imageVector = Icons.Default.Search,
+                    contentDescription = "",
+                    tint = Color.White,
+                    modifier = Modifier.size(40.dp)
+
+                )
             }
         }
         itemsIndexed(contacts) { index, contact ->
-            CircularBox(
+            ContactAvatar(
+                contact = contact,
                 modifier = Modifier
                     .padding(end = if (index == contacts.size) 0.dp else 16.dp)
-                    .size(40.dp),
-                backgroundColor = Color.Blue
-            ) {
-                Icon(imageVector = Icons.Default.Person, contentDescription = "")
-            }
+                    .size(64.dp)
+            )
         }
+    }
+}
+
+@Composable
+fun ContactAvatar(contact: Contact, modifier: Modifier = Modifier) {
+    CircularBox(
+        modifier = modifier,
+        backgroundColor = MaterialTheme.colors.primary
+    ) {
+        Icon(
+            imageVector = Icons.Default.Person,
+            contentDescription = "",
+            tint = MaterialTheme.colors.onPrimary,
+            modifier = Modifier.size(40.dp)
+        )
     }
 }
